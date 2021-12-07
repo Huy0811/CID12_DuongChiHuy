@@ -22,35 +22,21 @@ class Display {
     this.$cardBot.classList.add("dipslay__card--bot");
 
     this.$question = document.createElement("p");
-    this.$question.setAttribute("id", "question");
+    this.$question.classList.add("question");
     this.$question.innerHTML = `${question}`;
 
     this.$answer = document.createElement("p");
-    this.$answer.setAttribute("id", "answer");
+    this.$answer.classList.add("answer");
     this.$answer.innerHTML = `${answer}`;
 
     this.$add = document.createElement("p");
-    this.$add.setAttribute("id", "add");
+    this.$add.classList.add("add");
     this.$add.innerHTML = "+";
-    this.$add.addEventListener("click", this.unhideAnswer);
 
     this.$minus = document.createElement("p");
-    this.$minus.setAttribute("id", "minus");
+    this.$minus.classList.add("minus");
     this.$minus.innerHTML = "-";
-    this.$minus.addEventListener("click", this.hideAnswer);
   }
-
-  unhideAnswer = () => {
-    document.getElementById("answer").classList.add("unhide");
-    document.getElementById("add").classList.add("hide");
-    document.getElementById("minus").classList.add("unhide");
-  };
-
-  hideAnswer = () => {
-    document.getElementById("answer").classList.remove("unhide");
-    document.getElementById("minus").classList.remove("unhide");
-    document.getElementById("add").classList.remove("hide");
-  };
 
   render = () => {
     this.$container.appendChild(this.$card);

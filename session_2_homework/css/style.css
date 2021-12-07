@@ -13,6 +13,8 @@ p {
 
 .title {
   margin-top: 10%;
+  margin-bottom: 5%;
+  font-size: 30px;
 }
 
 .display {
@@ -43,12 +45,17 @@ p {
   margin-top: 10px;
 }
 
-#answer {
+.answer {
   display: none;
 }
 
-#minus {
+.add {
+  cursor: pointer;
+}
+
+.minus {
   display: none;
+  cursor: pointer;
 }
 
 .hide {
