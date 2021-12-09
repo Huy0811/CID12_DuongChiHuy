@@ -1,0 +1,51 @@
+class InputGroup {
+  $container;
+  $input;
+  // $label;
+  $errorMsg;
+
+  constructor(type, name, placeholder, label) {
+    this.$container = document.createElement("div");
+    this.$container.classList.add("box");
+
+    // this.$label = document.createElement("label");
+    // this.$label.innerHTML = label;
+
+    this.$input = document.createElement("input");
+    this.$input.classList.add("input-field");
+    this.$input.type = type;
+    this.$input.name = name;
+    this.$input.placeholder = placeholder;
+    this.$input.required = true;
+
+    this.$errorMsg = document.createElement("div");
+    this.$errorMsg.classList.add("errorMsg");
+  }
+
+  getInputValue = () => {
+    return this.$input.value;
+  };
+
+  setInputValue = (newValue) => {
+    this.$input.value = newValue;
+  };
+
+  setError = (message) => {
+    if (message) {
+      this.$errorMsg.innerHTML = message;
+      this.$container.classList.add("has-error");
+    } else {
+      this.$errorMsg.innerHTML = "";
+      this.$container.classList.remove("has-error");
+    }
+  };
+
+  render = () => {
+    this.$container.appendChild(this.$input);
+    // this.$container.appendChild(this.$label);
+    this.$container.appendChild(this.$errorMsg);
+    return this.$container;
+  };
+}
+
+export { InputGroup };
